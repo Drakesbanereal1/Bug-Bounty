@@ -1,14 +1,17 @@
-use std::io::{self, Write};
+use std::fs::OpenOptions;
+use std::io::Write;
+use chrono::Local;
 
 pub fn log_action(action: &str) {
-    println!("[LOG] {}", action);
-}
+    let timestamp = Local::now();
+    let log_entry = format!("[{}] {}\n", timestamp.format("%Y-%m-%d %H:%M:%S"), action);
 
-pub fn prompt_user() -> String {
-    print!("Enter your choice: ");
-    io::stdout().flush().unwrap();
+    let mut file = OpenOptions::new()
+        .append(true)
+        .create(true)
+        .open("bug_bounty.log")
+        .expect("Unable to open log file");
 
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).expect("Failed to read input");
-    input.trim().to_string()
+    file.write_all(log_entry.as_bytes()).expect("Failed to write to log");
+    println!("{}", log_entry.trim());
 }
