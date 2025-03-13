@@ -2,6 +2,7 @@ mod lib;  // Import lib.rs
 
 fn main() {
     lib::print_welcome_message();
+    lib::utils::log_action("Bug Bounty tool started");
 
     loop {
         println!("----------------------------------");
