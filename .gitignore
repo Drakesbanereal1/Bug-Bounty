@@ -23,3 +23,9 @@ Burp Suite/
 KLEE/
 Main/
 Z3/
+
+# Ignore these directories
+Burp Suite/
+KLEE/
+Main/
+Z3/
