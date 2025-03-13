@@ -14,7 +14,7 @@ pub mod full_code;
      lib::utils::log_action("Bug Bounty tool started");
  }
  
-pub fn exit_program() {
+ fn exit_program() {
     println!("Closing Ghidra (if running) and exiting...");
     ghidra::close_ghidra();
     println!("Goodbye!");
