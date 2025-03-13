@@ -7,10 +7,13 @@ pub mod full_code;
 
  // ✅ Ensure this matches the actual `z3.rs` file name
 
-pub fn print_welcome_message() {
-    println!("Welcome to the Bug Bounty Rust Tool!");
-}
+ mod lib;  // Import the shared library module
 
+ fn main() {
+     println!("Bug Bounty Project Running...");
+     lib::utils::log_action("Bug Bounty tool started");
+ }
+ 
 pub fn exit_program() {
     println!("Closing Ghidra (if running) and exiting...");
     ghidra::close_ghidra();
