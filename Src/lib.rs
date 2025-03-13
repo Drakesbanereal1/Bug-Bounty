@@ -4,6 +4,7 @@ pub mod ghidra;
 pub mod klee;
 pub mod z3;
 pub mod full_code;
+
  // ✅ Ensure this matches the actual `z3.rs` file name
 
 pub fn print_welcome_message() {
