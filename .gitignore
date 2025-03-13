@@ -23,20 +23,21 @@ Burp Suite/
 KLEE/
 Main/
 Z3/
+ghidra/
 
 # Ignore these directories
 Burp Suite/
 KLEE/
 Main/
 Z3/
+ghidra/
 
 # Remove these lines if present
 Burp Suite/
 KLEE/
 Main/
 Z3/
-
+ghidra/
 
 # Added by cargo
-
 /target
