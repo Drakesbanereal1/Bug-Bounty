@@ -1,4 +1,0 @@
-pub fn run_z3() {
-    println!("Executing Z3...");
-    // Add Z3 functionality here
-}

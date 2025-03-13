@@ -1,5 +1,0 @@
-pub fn run_burp_suite() {
-    println!("Executing Burp Suite...");
-    // Add the actual Burp Suite logic here
-}
-
