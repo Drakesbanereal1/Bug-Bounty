@@ -29,3 +29,9 @@ Burp Suite/
 KLEE/
 Main/
 Z3/
+
+# Remove these lines if present
+Burp Suite/
+KLEE/
+Main/
+Z3/
