@@ -1,0 +1,70 @@
+To determine all the required dependencies for your project, let's analyze your files. Based on the filenames in your project (from `git ls-files`), it looks like you're working with **Python** and possibly some C and LLVM-based tools (`test.bc`, `test_fixed.c`).
+
+---
+
+## **Step 1: Identify Dependencies**
+Here’s what we need to check:
+1. **Python Libraries** – Check if you have a `requirements.txt` file.
+2. **Rust Dependencies** – You previously had `.rs` files, but they were removed.
+3. **LLVM or Clang** – The presence of `.bc` (LLVM bitcode) suggests LLVM/Clang tools might be needed.
+4. **Burp Suite, Ghidra, KLEE, Z3** – Your Python scripts reference security tools.
+
+---
+
+## **Step 2: Install Required Packages**
+Run the following commands to install everything:
+
+### **1. Install Python Dependencies**
+Check if you have `requirements.txt`:
+```powershell
+pip install -r requirements.txt
+```
+If `requirements.txt` is missing, manually install required libraries:
+```powershell
+pip install subprocess sympy z3-solver
+```
+
+### **2. Install System Dependencies**
+Your project references **Burp Suite, Ghidra, KLEE, and Z3 Solver**, which require system tools.
+
+#### **For Windows (PowerShell)**
+```powershell
+winget install Python.Python
+winget install Git.Git
+winget install LLVM.LLVM
+winget install OpenJDK # Required for Ghidra
+```
+
+#### **For Linux (Debian/Ubuntu)**
+```bash
+sudo apt update
+sudo apt install python3 python3-pip git llvm clang openjdk-11-jdk
+```
+
+---
+
+### **3. Install Additional Security Tools**
+1. **Burp Suite** – Download [here](https://portswigger.net/burp).
+2. **Ghidra** – Download [here](https://github.com/NationalSecurityAgency/ghidra/releases).
+3. **KLEE** – Install via:
+   ```bash
+   sudo apt install klee
+   ```
+4. **Z3 Solver** – Install via:
+   ```bash
+   pip install z3-solver
+   ```
+
+---
+
+## **Step 3: Verify Installations**
+Run these commands to confirm everything is set up correctly:
+```powershell
+python --version
+pip list
+git --version
+clang --version
+java -version
+```
+
+Let me know if you need further help! 🚀 But remember I may not respond when you desire it.
